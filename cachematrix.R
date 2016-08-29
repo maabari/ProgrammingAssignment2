@@ -47,14 +47,14 @@ cacheSolve <- function(x, ...)
         return(m)
 }
 
-#
-# Testing
-#
+#############################
+#   Testing the functions   #
+#############################
 
 # Create a cached matrix
 x <- makeCacheMatrix()
 set.seed(123)
-x$set(matrix(runif(16, -1, 1), 4))
+x$set(matrix(runif(25, -1, 1), 5))
 
 # cacheSolve() computes the inverse
 cacheSolve(x)
@@ -63,5 +63,5 @@ cacheSolve(x)
 cacheSolve(x)
 
 # After changing the matrix, cacheSolve() recomputes the inverse
-x$set(matrix(runif(16, -1, 1), 4))
+x$set(matrix(runif(25, -1, 1), 5))
 cacheSolve(x)
